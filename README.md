@@ -20,7 +20,6 @@ $ composer require odan/base36
 ## Usage
 
 ```php
-
 use Odan\Encoding\Base36;
 
 $str = "abc 1234";
