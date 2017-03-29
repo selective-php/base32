@@ -41,13 +41,15 @@ class Base36
         }
         $input = str_split($input);
         $binaryString = "";
-        for ($i = 0; $i < count($input); $i++) {
+        $inputCount = count($input);
+        for ($i = 0; $i < $inputCount; $i++) {
             $binaryString .= str_pad(base_convert(ord($input[$i]), 10, 2), 8, '0', STR_PAD_LEFT);
         }
         $fiveBitBinaryArray = str_split($binaryString, 5);
         $base32 = "";
         $i = 0;
-        while ($i < count($fiveBitBinaryArray)) {
+        $fiveCount = count($fiveBitBinaryArray);
+        while ($i < $fiveCount) {
             $base32 .= self::$map[base_convert(str_pad($fiveBitBinaryArray[$i], 5, '0'), 2, 10)];
             $i++;
         }
@@ -97,7 +99,8 @@ class Base36
         $input = str_replace('=', '', $input);
         $input = str_split($input);
         $binaryString = "";
-        for ($i = 0; $i < count($input); $i = $i + 8) {
+        $count = count($input);
+        for ($i = 0; $i < $count; $i = $i + 8) {
             $x = "";
             if (!in_array($input[$i], self::$map)) {
                 return false;
@@ -106,7 +109,8 @@ class Base36
                 $x .= str_pad(base_convert(@self::$flippedMap[@$input[$i + $j]], 10, 2), 5, '0', STR_PAD_LEFT);
             }
             $eightBits = str_split($x, 8);
-            for ($z = 0; $z < count($eightBits); $z++) {
+            $bitCount = count($eightBits);
+            for ($z = 0; $z < $bitCount; $z++) {
                 $binaryString .= (($y = chr(base_convert($eightBits[$z], 2, 10))) || ord($y) == 48) ? $y : "";
             }
         }
