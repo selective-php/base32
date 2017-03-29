@@ -1,0 +1,46 @@
+{
+  "name": "odan/base36",
+  "type": "library",
+  "description": "Base36 string encode and decode",
+  "keywords": [
+    "base36",
+    "encode",
+    "decode",
+    "encoding",
+    "encoder"
+  ],
+  "homepage": "https://github.com/odan/base36",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "odan",
+      "email": "odan@users.noreply.github.com",
+      "homepage": "https://github.com/odan/session",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.0"
+  },
+  "scripts": {
+    "test": "phpunit",
+    "check-style": "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests",
+    "fix-style": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit -n --no-patch 1 src tests"
+  },
+  "autoload": {
+    "psr-4": {
+      "Odan\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Odan\\Test\\": "tests"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  }
+}
