@@ -26,10 +26,10 @@ use Odan\Encoding\Base36;
 $str = "abc 1234";
 
 // Encode
-$enc = Base32::encode($str);
+$enc = Base32::encode($str); // MFRGGIBRGIZTI====
 
 // Decode
-echo Base32::decode($enc);
+echo Base32::decode($enc); // abc 1234
 ```
 
 ### Without padding and only lowercase
