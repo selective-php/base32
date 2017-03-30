@@ -32,3 +32,12 @@ tools:
     external_code_coverage:
         timeout: 600
         runs: 1
+
+build:
+    tests:
+        override:
+            -
+                command: 'vendor/bin/phpunit --coverage-clover build/logs/clover.xml'
+                coverage:
+                    file: 'build/logs/clover.xml'
+                    format: 'clover'
