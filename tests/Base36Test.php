@@ -16,7 +16,7 @@ class Base36Test extends TestCase
     /**
      * Test.
      *
-     * @covers encode
+     * @covers ::encode
      */
     public function testEncode()
     {
@@ -42,7 +42,7 @@ class Base36Test extends TestCase
     /**
      * Test.
      *
-     * @covers decode
+     * @covers ::decode
      */
     public function testDecode()
     {
