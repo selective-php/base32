@@ -20,22 +20,23 @@ class Base36Test extends TestCase
      */
     public function testEncode()
     {
-        $enc = Base36::encode(null);
+        $base36 = new Base36();
+        $enc = $base36->encode(null);
         $this->assertEquals('', $enc);
 
-        $enc = Base36::encode('');
+        $enc = $base36->encode('');
         $this->assertEquals('', $enc);
 
-        $enc = Base36::encode(0);
+        $enc = $base36->encode(0);
         $this->assertEquals('', $enc);
 
-        $enc = Base36::encode('abc 1234');
+        $enc = $base36->encode('abc 1234');
         $this->assertEquals('MFRGGIBRGIZTI===', $enc);
 
-        $enc = Base36::encode('abc 1234', false);
+        $enc = $base36->encode('abc 1234', false);
         $this->assertEquals('MFRGGIBRGIZTI', $enc);
 
-        $enc = Base36::encode("\0€ÿ", false);
+        $enc = $base36->encode("\0€ÿ", false);
         $this->assertEquals('ADRIFLGDX4', $enc);
     }
 
@@ -46,16 +47,17 @@ class Base36Test extends TestCase
      */
     public function testDecode()
     {
-        $dec = Base36::decode(null);
+        $base36 = new Base36();
+        $dec = $base36->decode(null);
         $this->assertFalse($dec);
 
-        $dec = Base36::decode('MFRGGIBRGIZTI====');
+        $dec = $base36->decode('MFRGGIBRGIZTI====');
         $this->assertEquals('abc 1234', $dec);
 
-        $dec = Base36::decode('MFRGGIBRGIZTI');
+        $dec = $base36->decode('MFRGGIBRGIZTI');
         $this->assertEquals('abc 1234', $dec);
 
-        $dec = Base36::decode('ADRIFLGDX4');
+        $dec = $base36->decode('ADRIFLGDX4');
         $this->assertEquals("\0€ÿ", $dec);
     }
 }

@@ -9,13 +9,17 @@
 
 Base36 string encode and decode.
 
-## Install
+## Installation
 
 Via Composer
 
 ```
 $ composer require odan/base36
 ```
+
+## Requirements
+
+* PHP 7.0+
 
 ## Usage
 
@@ -25,10 +29,11 @@ use Odan\Encoding\Base36;
 $str = "abc 1234";
 
 // Encode
-$enc = Base32::encode($str); // MFRGGIBRGIZTI====
+$base36 = new Base36();
+$enc = $base36->encode($str); // MFRGGIBRGIZTI====
 
 // Decode
-echo Base32::decode($enc); // abc 1234
+echo $base36->decode($enc); // abc 1234
 ```
 
 ### Without padding and only lowercase
@@ -37,11 +42,11 @@ echo Base32::decode($enc); // abc 1234
 $str = "abc 1234";
 
 // Encode
-$enc = Base32::encode($str, false);
+$enc = $base36->encode($str, false);
 $enc = strtolower($enc); // mfrggibrgizti
 
 // Decode
-echo Base32::decode(strtoupper($enc));
+echo $base36->decode(strtoupper($enc));
 ```
 
 ## Testing
