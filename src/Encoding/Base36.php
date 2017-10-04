@@ -111,7 +111,7 @@ class Base36
                 return false;
             }
             for ($j = 0; $j < 8; $j++) {
-                if(!isset($input[$i + $j])) {
+                if (!isset($input[$i + $j])) {
                     continue;
                 }
                 $x .= str_pad(base_convert($this->flippedMap[$input[$i + $j]], 10, 2), 5, '0', STR_PAD_LEFT);
