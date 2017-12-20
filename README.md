@@ -7,7 +7,7 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-Base32 string encoding and decoding.
+Base32 string encoder based on [RFC 4648](https://tools.ietf.org/html/rfc4648#section-6).
 
 ## Installation
 
