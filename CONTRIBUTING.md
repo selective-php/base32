@@ -2,7 +2,7 @@
 
 Contributions are **welcome** and will be fully **credited**.
 
-We accept contributions via Pull Requests on [Github](https://github.com/odan/base36).
+We accept contributions via Pull Requests on [Github](https://github.com/odan/base32).
 
 
 ## Pull Requests

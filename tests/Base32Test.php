@@ -2,15 +2,15 @@
 
 namespace Odan\Test;
 
-use Odan\Encoding\Base36;
+use Odan\Encoding\Base32;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Base36Test
+ * Base32Test
  *
- * @coversDefaultClass \Odan\Encoding\Base36
+ * @coversDefaultClass \Odan\Encoding\Base32
  */
-class Base36Test extends TestCase
+class Base32Test extends TestCase
 {
 
     /**
@@ -20,23 +20,23 @@ class Base36Test extends TestCase
      */
     public function testEncode()
     {
-        $base36 = new Base36();
-        $enc = $base36->encode(null);
+        $base32 = new Base32();
+        $enc = $base32->encode(null);
         $this->assertEquals('', $enc);
 
-        $enc = $base36->encode('');
+        $enc = $base32->encode('');
         $this->assertEquals('', $enc);
 
-        $enc = $base36->encode(0);
+        $enc = $base32->encode(0);
         $this->assertEquals('', $enc);
 
-        $enc = $base36->encode('abc 1234');
+        $enc = $base32->encode('abc 1234');
         $this->assertEquals('MFRGGIBRGIZTI===', $enc);
 
-        $enc = $base36->encode('abc 1234', false);
+        $enc = $base32->encode('abc 1234', false);
         $this->assertEquals('MFRGGIBRGIZTI', $enc);
 
-        $enc = $base36->encode("\0€ÿ", false);
+        $enc = $base32->encode("\0€ÿ", false);
         $this->assertEquals('ADRIFLGDX4', $enc);
     }
 
@@ -47,17 +47,17 @@ class Base36Test extends TestCase
      */
     public function testDecode()
     {
-        $base36 = new Base36();
-        $dec = $base36->decode(null);
+        $base32 = new Base32();
+        $dec = $base32->decode(null);
         $this->assertFalse($dec);
 
-        $dec = $base36->decode('MFRGGIBRGIZTI====');
+        $dec = $base32->decode('MFRGGIBRGIZTI====');
         $this->assertEquals('abc 1234', $dec);
 
-        $dec = $base36->decode('MFRGGIBRGIZTI');
+        $dec = $base32->decode('MFRGGIBRGIZTI');
         $this->assertEquals('abc 1234', $dec);
 
-        $dec = $base36->decode('ADRIFLGDX4');
+        $dec = $base32->decode('ADRIFLGDX4');
         $this->assertEquals("\0€ÿ", $dec);
     }
 }

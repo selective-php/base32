@@ -9,7 +9,7 @@ namespace Odan\Encoding;
  *
  * @author Bryan Ruiz
  */
-class Base36
+class Base32
 {
     /**
      * @var array
@@ -33,11 +33,11 @@ class Base36
     );
 
     /**
-     * Encodes data with base36.
+     * Encodes data with base32.
      *
      * @param string $input The original data, as a string.
      * @param bool $padding Use padding false when encoding for urls
-     * @return string Base36 encoded string
+     * @return string Base32 encoded string
      */
     public function encode($input, $padding = true)
     {
@@ -79,7 +79,7 @@ class Base36
     }
 
     /**
-     * Decodes data encoded with base36.
+     * Decodes data encoded with base32.
      *
      * @param string $input The encoded data.
      * @return bool|string the original data or false on failure.

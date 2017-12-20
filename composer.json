@@ -3,7 +3,7 @@
   "type": "library",
   "description": "Base32 based on RFC 4648",
   "keywords": [
-    "base36",
+    "base32",
     "encode",
     "decode",
     "encoding",
