@@ -1,7 +1,7 @@
 {
-  "name": "odan/base36",
+  "name": "odan/base32",
   "type": "library",
-  "description": "Base36 string encode and decode",
+  "description": "Base32 based on RFC 4648",
   "keywords": [
     "base36",
     "encode",
@@ -9,7 +9,7 @@
     "encoding",
     "encoder"
   ],
-  "homepage": "https://github.com/odan/base36",
+  "homepage": "https://github.com/odan/base32",
   "license": "MIT",
   "authors": [
     {
