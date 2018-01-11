@@ -59,5 +59,8 @@ class Base32Test extends TestCase
 
         $dec = $base32->decode('ADRIFLGDX4');
         $this->assertEquals("\0€ÿ", $dec);
+
+        $dec = $base32->decode('mfrggibrgizti');
+        $this->assertEquals("abc 1234", $dec);
     }
 }

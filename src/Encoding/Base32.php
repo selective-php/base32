@@ -87,6 +87,7 @@ class Base32
         if (empty($input)) {
             return false;
         }
+        $input = strtoupper($input);
         $paddingCharCount = substr_count($input, $this->map[32]);
         $allowedValues = array(6, 4, 3, 1, 0);
         if (!in_array($paddingCharCount, $allowedValues)) {

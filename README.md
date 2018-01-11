@@ -30,10 +30,10 @@ $str = "abc 1234";
 
 // Encode
 $base32 = new Base32();
-$enc = $base32->encode($str); // MFRGGIBRGIZTI====
+$encoded = $base32->encode($str); // MFRGGIBRGIZTI====
 
 // Decode
-echo $base32->decode($enc); // abc 1234
+echo $base32->decode($encoded); // abc 1234
 ```
 
 ### Without padding and only lowercase
@@ -42,11 +42,11 @@ echo $base32->decode($enc); // abc 1234
 $str = "abc 1234";
 
 // Encode
-$enc = $base32->encode($str, false);
-$enc = strtolower($enc); // mfrggibrgizti
+$encoded = $base32->encode($str, false);
+$encoded = strtolower($enc); // mfrggibrgizti
 
 // Decode
-echo $base32->decode(strtoupper($enc));
+echo $base32->decode($encoded);
 ```
 
 ## Testing
