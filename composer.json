@@ -9,7 +9,7 @@
     "encoding",
     "encoder"
   ],
-  "homepage": "https://github.com/selective/base32",
+  "homepage": "https://github.com/selective-php/base32",
   "license": "MIT",
   "require": {
     "php": ">=7.0"
