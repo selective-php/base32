@@ -1,5 +1,5 @@
 {
-  "name": "odan/base32",
+  "name": "selective/base32",
   "type": "library",
   "description": "Base32 based on RFC 4648",
   "keywords": [
@@ -9,16 +9,8 @@
     "encoding",
     "encoder"
   ],
-  "homepage": "https://github.com/odan/base32",
+  "homepage": "https://github.com/selective/base32",
   "license": "MIT",
-  "authors": [
-    {
-      "name": "odan",
-      "email": "odan@users.noreply.github.com",
-      "homepage": "https://github.com/odan/session",
-      "role": "Developer"
-    }
-  ],
   "require": {
     "php": ">=7.0"
   },
@@ -33,12 +25,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Odan\\": "src"
+      "Selective\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Odan\\Test\\": "tests"
+      "Selective\\Test\\": "tests"
     }
   },
   "config": {

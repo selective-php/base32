@@ -1,6 +1,6 @@
 <?php
 
-namespace Odan\Encoding;
+namespace Selective\Encoding;
 
 /**
  * Encode in Base32 based on RFC 4648.

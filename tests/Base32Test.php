@@ -1,14 +1,14 @@
 <?php
 
-namespace Odan\Test;
+namespace Selective\Test;
 
-use Odan\Encoding\Base32;
+use Selective\Encoding\Base32;
 use PHPUnit\Framework\TestCase;
 
 /**
  * Base32Test
  *
- * @coversDefaultClass \Odan\Encoding\Base32
+ * @coversDefaultClass \Selective\Encoding\Base32
  */
 class Base32Test extends TestCase
 {
