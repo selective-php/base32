@@ -19,7 +19,7 @@ $ composer require selective/base32
 
 ## Requirements
 
-* PHP 7.0+
+* PHP 7.1.3+
 
 ## Usage
 
