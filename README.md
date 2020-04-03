@@ -24,7 +24,7 @@ $ composer require selective/base32
 ## Usage
 
 ```php
-use Selective\Encoding\Base32;
+use Selective\Base32\Base32;
 
 $str = "abc 1234";
 
