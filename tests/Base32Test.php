@@ -6,7 +6,7 @@ use Selective\Encoding\Base32;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Base32Test
+ * Test.
  *
  * @coversDefaultClass \Selective\Encoding\Base32
  */
@@ -17,17 +17,14 @@ class Base32Test extends TestCase
      * Test.
      *
      * @covers ::encode
+     *
+     * @return void
      */
     public function testEncode()
     {
         $base32 = new Base32();
-        $enc = $base32->encode(null);
-        $this->assertEquals('', $enc);
 
         $enc = $base32->encode('');
-        $this->assertEquals('', $enc);
-
-        $enc = $base32->encode(0);
         $this->assertEquals('', $enc);
 
         $enc = $base32->encode('abc 1234');
@@ -44,12 +41,14 @@ class Base32Test extends TestCase
      * Test.
      *
      * @covers ::decode
+     *
+     * @return void
      */
     public function testDecode()
     {
         $base32 = new Base32();
-        $dec = $base32->decode(null);
-        $this->assertFalse($dec);
+        $dec = $base32->decode('');
+        $this->assertSame('', $dec);
 
         $dec = $base32->decode('MFRGGIBRGIZTI====');
         $this->assertEquals('abc 1234', $dec);
@@ -61,6 +60,6 @@ class Base32Test extends TestCase
         $this->assertEquals("\0€ÿ", $dec);
 
         $dec = $base32->decode('mfrggibrgizti');
-        $this->assertEquals("abc 1234", $dec);
+        $this->assertEquals('abc 1234', $dec);
     }
 }
