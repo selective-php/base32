@@ -2,7 +2,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/github/release/selective-php/base32.svg)](https://packagist.org/packages/selective/base32)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE.md)
-[![Build Status](https://travis-ci.org/selective-php/base32.svg?branch=master)](https://travis-ci.org/selective-php/base32)
+[![Build Status](https://github.com/selective-php/base32/workflows/PHP/badge.svg)](https://github.com/selective-php/base32/actions)
 [![Coverage Status](https://scrutinizer-ci.com/g/selective-php/base32/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/selective-php/base32/code-structure)
 [![Quality Score](https://scrutinizer-ci.com/g/selective-php/base32/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/selective-php/base32/?branch=master)
 [![Total Downloads](https://img.shields.io/packagist/dt/selective/base32.svg)](https://packagist.org/packages/selective/base32/stats)
