@@ -1,14 +1,14 @@
 <?php
 
-namespace Selective\Test;
+namespace Selective\Base32\Test;
 
-use Selective\Encoding\Base32;
 use PHPUnit\Framework\TestCase;
+use Selective\Base32\Base32;
 
 /**
  * Test.
  *
- * @coversDefaultClass \Selective\Encoding\Base32
+ * @coversDefaultClass \Selective\Base32\Base32
  */
 class Base32Test extends TestCase
 {

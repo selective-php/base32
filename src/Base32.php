@@ -1,6 +1,6 @@
 <?php
 
-namespace Selective\Encoding;
+namespace Selective\Base32;
 
 use InvalidArgumentException;
 

@@ -27,12 +27,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Selective\\": "src"
+            "Selective\\Base32\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Selective\\Test\\": "tests"
+            "Selective\\Base32\\Test\\": "tests"
         }
     },
     "config": {
