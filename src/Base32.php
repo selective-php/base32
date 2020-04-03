@@ -47,13 +47,13 @@ final class Base32
         '5',
         '6',
         '7', // 31
-        '='  // padding char
+        '=',  // padding char
     ];
 
     /**
      * @var array<string>
      */
-    private $flippedMap = array(
+    private $flippedMap = [
         'A' => '0',
         'B' => '1',
         'C' => '2',
@@ -85,13 +85,13 @@ final class Base32
         '4' => '28',
         '5' => '29',
         '6' => '30',
-        '7' => '31'
-    );
+        '7' => '31',
+    ];
 
     /**
      * Encodes data with base32.
      *
-     * @param string $input The original data, as a string.
+     * @param string $input The original data, as a string
      * @param bool $padding Use padding false when encoding for urls
      *
      * @return string The Base32 encoded string
@@ -142,11 +142,11 @@ final class Base32
     /**
      * Decodes data encoded with base32.
      *
-     * @param string $input The encoded data.
+     * @param string $input The encoded data
      *
      * @throws InvalidArgumentException
      *
-     * @return string The original data or false on failure.
+     * @return string The original data or false on failure
      */
     public function decode(string $input): string
     {
@@ -156,7 +156,7 @@ final class Base32
 
         $input = strtoupper($input);
         $paddingCharCount = substr_count($input, $this->map[32]);
-        $allowedValues = array(6, 4, 3, 1, 0);
+        $allowedValues = [6, 4, 3, 1, 0];
 
         if (!in_array($paddingCharCount, $allowedValues)) {
             throw new InvalidArgumentException('Invalid base32 data');

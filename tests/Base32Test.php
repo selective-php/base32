@@ -12,7 +12,6 @@ use Selective\Base32\Base32;
  */
 class Base32Test extends TestCase
 {
-
     /**
      * Test.
      *
