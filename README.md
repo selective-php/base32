@@ -24,6 +24,8 @@ $ composer require selective/base32
 ## Usage
 
 ```php
+<?php
+
 use Selective\Base32\Base32;
 
 $str = 'abc 1234';
@@ -39,6 +41,8 @@ echo $base32->decode($encoded); // abc 1234
 ### Without padding and only lowercase
 
 ```php
+<?php
+
 $str = 'abc 1234';
 
 // Encode
