@@ -182,22 +182,56 @@ final class Base32
                 throw new InvalidArgumentException('Invalid base32 data');
             }
 
-            for ($j = 0; $j < 8; $j++) {
-                if (!isset($input[$i + $j])) {
-                    continue;
-                }
-                $x .= str_pad(base_convert($this->flippedMap[$input[$i + $j]], 10, 2), 5, '0', STR_PAD_LEFT);
-            }
+            $x .= $this->decodeFlippedMap($i, $input);
 
             $eightBits = str_split($x, 8);
             $bitCount = count($eightBits);
 
-            for ($z = 0; $z < $bitCount; $z++) {
-                $binaryString .= (($y = chr((int)base_convert($eightBits[$z], 2, 10))) || ord($y) === 48) ? $y : '';
-            }
+            $binaryString .= $this->decodeEightBits($bitCount, $eightBits);
         }
 
         // Converting a binary (\0 terminated) string to a PHP string
         return rtrim($binaryString, "\0");
+    }
+
+    /**
+     * Decode data with flipped map
+     *
+     * @param int $i The encoded data index
+     * @param array<string> $input The encoded data array
+     *
+     * @return string parted decoded string
+     */
+    private function decodeFlippedMap(int $i, array $input)
+    {
+        $x = '';
+
+        for ($j = 0; $j < 8; $j++) {
+            if (!isset($input[$i + $j])) {
+                continue;
+            }
+            $x .= str_pad(base_convert($this->flippedMap[$input[$i + $j]], 10, 2), 5, '0', STR_PAD_LEFT);
+        }
+
+        return $x;
+    }
+
+    /**
+     * Decode data with eight bits
+     *
+     * @param int $bitCount The eight bits count
+     * @param array<string> $eightBits The eight bits
+     *
+     * @return string
+     */
+    private function decodeEightBits(int $bitCount, array $eightBits)
+    {
+        $binaryString = '';
+
+        for ($z = 0; $z < $bitCount; $z++) {
+            $binaryString .= (($y = chr((int)base_convert($eightBits[$z], 2, 10))) || ord($y) === 48) ? $y : '';
+        }
+
+        return $binaryString;
     }
 }
