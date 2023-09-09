@@ -6,8 +6,6 @@ use InvalidArgumentException;
 
 /**
  * Encode in Base32 based on RFC 4648.
- *
- * @author Bryan Ruiz
  */
 final class Base32
 {
@@ -163,8 +161,9 @@ final class Base32
         }
 
         for ($i = 0; $i < 4; $i++) {
-            if ($paddingCharCount === $allowedValues[$i] &&
-                substr($input, -($allowedValues[$i])) !== str_repeat($this->map[32], $allowedValues[$i])
+            if (
+                $paddingCharCount === $allowedValues[$i]
+                && substr($input, -$allowedValues[$i]) !== str_repeat($this->map[32], $allowedValues[$i])
             ) {
                 throw new InvalidArgumentException('Invalid base32 data');
             }
@@ -195,7 +194,7 @@ final class Base32
     }
 
     /**
-     * Decode data with flipped map
+     * Decode data with flipped map.
      *
      * @param int $i The encoded data index
      * @param array<string> $input The encoded data array
@@ -217,7 +216,7 @@ final class Base32
     }
 
     /**
-     * Decode data with eight bits
+     * Decode data with eight bits.
      *
      * @param int $bitCount The eight bits count
      * @param array<string> $eightBits The eight bits

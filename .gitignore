@@ -1,10 +1,7 @@
-build/
-nbproject/
 .idea/
-composer.phar
 composer.lock
-.DS_STORE
-cache.properties
-.php_cs.cache
+nbproject/
 vendor/
-tmp/
+build/
+.phpunit.cache/
+.phpunit.result.cache

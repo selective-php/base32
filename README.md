@@ -2,7 +2,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/github/release/selective-php/base32.svg)](https://packagist.org/packages/selective/base32)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE.md)
-[![Build Status](https://github.com/selective-php/base32/workflows/PHP/badge.svg)](https://github.com/selective-php/base32/actions)
+[![Build Status](https://github.com/selective-php/base32/workflows/build/badge.svg)](https://github.com/selective-php/base32/actions)
 [![Coverage Status](https://scrutinizer-ci.com/g/selective-php/base32/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/selective-php/base32/code-structure)
 [![Quality Score](https://scrutinizer-ci.com/g/selective-php/base32/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/selective-php/base32/?branch=master)
 [![Total Downloads](https://img.shields.io/packagist/dt/selective/base32.svg)](https://packagist.org/packages/selective/base32/stats)
@@ -19,7 +19,7 @@ $ composer require selective/base32
 
 ## Requirements
 
-* PHP 7.1.3+
+* PHP 8.1+
 
 ## Usage
 
@@ -30,12 +30,15 @@ use Selective\Base32\Base32;
 
 $str = 'abc 1234';
 
-// Encode
 $base32 = new Base32();
-$encoded = $base32->encode($str); // MFRGGIBRGIZTI====
+
+// Encode
+// MFRGGIBRGIZTI====
+$encoded = $base32->encode($str);
 
 // Decode
-echo $base32->decode($encoded); // abc 1234
+// abc 1234
+echo $base32->decode($encoded); 
 ```
 
 ### Without padding and only lowercase
@@ -47,7 +50,9 @@ $str = 'abc 1234';
 
 // Encode
 $encoded = $base32->encode($str, false);
-$encoded = strtolower($enc); // mfrggibrgizti
+
+// mfrggibrgizti
+$encoded = strtolower($enc); 
 
 // Decode
 echo $base32->decode($encoded);
