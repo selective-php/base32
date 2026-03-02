@@ -17,7 +17,7 @@ $ composer require selective/base32
 
 ## Requirements
 
-* PHP 8.1+
+* PHP 8.2 - 8.5
 
 ## Usage
 
