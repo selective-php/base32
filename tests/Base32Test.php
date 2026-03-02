@@ -2,20 +2,21 @@
 
 namespace Selective\Base32\Test;
 
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\CoversMethod;
 use PHPUnit\Framework\TestCase;
 use Selective\Base32\Base32;
 
 /**
  * Test.
- *
- * @coversDefaultClass \Selective\Base32\Base32
  */
+#[CoversClass(Base32::class)]
+#[CoversMethod(Base32::class, 'encode')]
+#[CoversMethod(Base32::class, 'decode')]
 class Base32Test extends TestCase
 {
     /**
      * Test.
-     *
-     * @covers ::encode
      *
      * @return void
      */
@@ -38,8 +39,6 @@ class Base32Test extends TestCase
 
     /**
      * Test.
-     *
-     * @covers ::decode
      *
      * @return void
      */
