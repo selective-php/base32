@@ -201,7 +201,7 @@ final class Base32
      *
      * @return string parted decoded string
      */
-    private function decodeFlippedMap(int $i, array $input)
+    private function decodeFlippedMap(int $i, array $input): string
     {
         $x = '';
 
@@ -223,12 +223,12 @@ final class Base32
      *
      * @return string
      */
-    private function decodeEightBits(int $bitCount, array $eightBits)
+    private function decodeEightBits(int $bitCount, array $eightBits): string
     {
         $binaryString = '';
 
         for ($z = 0; $z < $bitCount; $z++) {
-            $binaryString .= (($y = chr((int)base_convert($eightBits[$z], 2, 10))) || ord($y) === 48) ? $y : '';
+            $binaryString .= pack('C', bindec($eightBits[$z]));
         }
 
         return $binaryString;
